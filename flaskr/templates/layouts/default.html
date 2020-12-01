@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Flash Card App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    {% block headerincludes %}{% endblock %}
+  </head>
+  <body>
+    {% include 'includes/navbar.html' %}
+
+    <div class="content">
+      {% block content %}{% endblock %}
+    </div>
+
+    {% block templates %}{% endblock %}
+  </body>
+  <footer>
+    {% block footerincludes %}{% endblock %}
+    <script src="{{ url_for('static', filename='app/navbar.js') }}"></script>
+
+  </footer>
+</html>

@@ -1,0 +1,63 @@
+.deck-viewer {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  height: 375px;
+}
+
+.front-card, .back-card {
+  box-shadow: 0px 4px 6px #00000017;
+  border-radius: 14px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.card p{
+  display: block;
+  margin: 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.bar-row {
+  margin-top: 20px;
+}
+
+.bg-bar {
+  height: 20px;
+  background-color:#eaeaea;
+  border-radius: 10px;
+}
+
+.fg-bar {
+  height: 20px;
+  background-color: #0773FF;
+  border-radius: 10px;
+  margin-top: -20px;
+}
+
+.favourite-btn {
+  font-size: 0.8rem;
+  background: none;
+  outline: none;
+  border: none;
+  color: #94c2ff;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease-out;
+  cursor: pointer
+}
+
+.favourite-btn:hover {
+  color: #0773FF;
+}

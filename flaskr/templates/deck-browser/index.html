@@ -1,0 +1,29 @@
+{% extends 'layouts/default.html' %}
+
+{% block headerincludes %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="deck-viewer">
+    <div>
+      <h3>{{page_title}}</h3>
+    </div>
+    <div class="deck-container">
+      {% for deck in decks %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{deck.d_title}}</h5>
+            <p class="card-description">{{deck.d_desc}}</p>
+            <a class="view-btn" href="/deck/{{deck.d_id}}" data-deckid="{{deck.d_id}}">View</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block footerincludes %}
+  <script src="{{ url_for('static', filename='app/deck-browser.js') }}"></script>
+{% endblock %}
+

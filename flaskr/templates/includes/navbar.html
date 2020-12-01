@@ -1,0 +1,9 @@
+<div class="navbar">
+  <h1>Flash Cards</h1>
+  <ul class="routes">
+    <li><a style="margin-top:0" href="/deck/create"><button class="primary-btn">Create Deck</button></a></li>
+    <li><a id="favourite-decks" href="/decks/favourites" {% if request.path == '/decks/favourites' %}class="active"{% endif %}>Favourites</a></li>
+    <li><a id="my-decks" href="/decks/my" {% if request.path == 'decks/my' %}class="active"{% endif %}>My Decks</a></li>
+    <li><a href="/" {% if request.path == '/' %}class="active"{% endif %}>Home</a></li>
+  </ul>
+</div>

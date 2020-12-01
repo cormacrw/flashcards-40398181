@@ -1,0 +1,71 @@
+{% extends 'layouts/default.html' %}
+
+{% block headerincludes %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/deckcreator.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="card-creator">
+    <div>
+      <h3>New Deck</h3>
+    </div>
+    <div class="card card-lg" style="margin-bottom: 20px">
+      <div class="card-body">
+        <div class="col">
+          <div class="input-group">
+            <label>Deck Title</label>
+            <input type="text" name="title" />
+          </div>
+          <div class="input-group" style="margin-top: 5px">
+            <label>Deck Author</label>
+            <input type="text" name="author" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <label for="">Description</label>
+            <textarea name="description" maxlength="80"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-row-container">
+      <div class="card-row">
+        <div class="card" style="margin-right: 20px">
+          <h5 class="card-title">Question</h5>
+          <textarea name="question"></textarea>
+        </div>
+        <div class="card">
+          <h5 class="card-title">Answer</h5>
+          <textarea name="answer"></textarea>
+        </div>
+      </div>
+    </div>
+    <div style="margin: 0 auto;">
+      <button class="primary-btn j_new_row" style="margin-top: 15px;">New Card</button>
+      <button class="primary-btn j_save" style="margin-top: 15px;">Save</button>
+    </div>
+  </div>
+{% endblock %}
+
+{% block templates %}
+  {% raw %}
+    <script id="card-row-template" type="x-tmpl-mustache">
+      <div class="card-row" style="margin-top: 20px">
+        <div class="card" style="margin-right: 20px">
+          <h5 class="card-title">Question</h5>
+          <textarea name="question"></textarea>
+        </div>
+        <div class="card">
+          <h5 class="card-title">Answer</h5>
+          <textarea name="answer"></textarea>
+        </div>
+      </div>
+    </script>
+  {% endraw %}
+{% endblock %} 
+
+{% block footerincludes %}
+  <script src="{{ url_for('static', filename='app/deck-creator.js') }}"></script>
+{% endblock %}

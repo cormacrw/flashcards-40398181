@@ -1,0 +1,35 @@
+{% extends 'layouts/default.html' %}
+
+{% block headerincludes %}
+  <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/viewer.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="deck-viewer">
+    <div>
+      <h3>{{deck.d_title}} <span><button class="j_favourite favourite-btn">Favourite</button><button class="j_unfavourite favourite-btn">Unfavourite</button></span></h3>
+    </div>
+    <div id="card" class="card">
+      <div class="front front-card"><p></p></div>
+      <div class="back back-card"><p></p></div>
+    </div>
+    <div class="btn-container">
+      <button class="primary-btn j_prev disabled">Back</button>
+      <button class="primary-btn j_flip">Flip</button>
+      <button class="primary-btn j_next">Next</button>
+    </div>
+    <div class="bar-row">
+      <div class="bar-container">
+        <div class="bg-bar"></div>
+        <div class="fg-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" name="cards" id="cards" value="{{cards}}" />
+{% endblock %}
+
+{% block footerincludes %}
+  <script src="{{ url_for('static', filename='app/deck-viewer.js') }}"></script>
+{% endblock %}
