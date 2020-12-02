@@ -66,4 +66,4 @@ def view_favourite_decks():
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
-    app.run(threaded=True, port=5000)
+    app.run(threaded=True, port=5000, host="0.0.0.0")
