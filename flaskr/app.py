@@ -63,3 +63,7 @@ def view_favourite_decks():
 
   return favourite_decks_view.render(deck_ids)
 
+
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
